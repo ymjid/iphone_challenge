@@ -3,10 +3,6 @@ $(document).ready (function () {
   $('#options_button').click(function () {
     $('#options_modal').toggleClass("modal_background");
     $('#options_modal').slideToggle(500);
-    // var windows = $(document).height(); // returns height of HTML document
-    // var modals = $(".iphone_m#options_modalodal").height(); // returns height of HTML document
-    // var size = windows - modals;
-    // // $("#options_modal").css("paddingTop", size + "px");
   });
   $(".iphone_modal_header_button").click(function () {
     $(this).toggleClass("bg-white");
@@ -39,5 +35,11 @@ $('.modal_background').hide();  });
     $('#options_modal').slideToggle(500, function () {
       $('#options_modal').toggleClass("modal_background");
     });
+  });
+  $("#msg_input").focusin(function(){
+    $(".search_label").hide();
+  });
+  $("#msg_input").focusout(function(){
+    $(".search_label").show();
   });
 });

@@ -3,6 +3,7 @@
 body {
   padding: 0;
   margin:0;
+  // overflow-x: hidden;
 }
 
 .no_padding {
@@ -17,6 +18,118 @@ body {
   span {
     text-transform: uppercase;
   }
+}
+
+.msg_content {
+  color:black !important;
+}
+
+.msg_blue {
+  color: #0275CD;
+}
+
+.msg_action {
+  font-size:20px;
+  .msg_blue;
+}
+
+.msg_title {
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.msg_header {
+  display:flex;
+  justify-content:space-between;
+  align-items: center;
+  height: 40px;
+}
+
+.msg_search {
+  background-color: rgb(139, 139, 139);
+  display: flex;
+  justify-content: center;
+}
+
+.msg_input {
+  margin-top: 10px;
+  margin-bottom: 10px;
+  margin-left: 5px;
+  margin-right: 5px;
+  width: 95%;
+}
+
+.search_label {
+  display: flex;
+  flex-direction: row;
+  position: absolute;
+  justify-content: center;
+  align-items: center;
+  width: 95%;
+  height: 100%;
+  color:rgb(139, 139, 139);
+}
+
+.search_icon {
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+.user_block {
+  display: flex;
+  justify-content: space-between;
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+.user_separator {
+  margin-left: 50px;
+  height:1px;
+  border-bottom : 1px solid rgb(139, 139, 139);
+}
+
+.user_data {
+  display: flex;
+  flex-direction: row;
+  margin-left: 50px;
+  .user_name {
+    font-weight: bold;
+    font-size:16px;
+  }
+  .user_msg {
+    color:rgb(139, 139, 139);
+  }
+}
+
+.user_photo {
+  display: flex;
+  align-items: center;
+  margin-right: 10px;
+  .photo_empty {
+    color:white;
+    border-radius: 100%;
+    width:50px;
+    height:50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size:20px;
+    font-weight: bold;
+    background-color: rgb(139, 139, 139);
+  }
+  .photo {
+    background-image: url("../iphone-gallery/lescaut.jpg");
+    background-size: cover;
+    background-position: center;
+    border-radius: 100%;
+    width:50px;
+    height:50px;
+  }
+}
+
+.msg_time {
+  padding-right: 10px;
+  color:rgb(139, 139, 139);
 }
 
 .header_left {
@@ -67,10 +180,10 @@ body {
 }
 
 .apps {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    height:98vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height:98vh;
 }
 .infos_left {
   display: flex;
