@@ -7,6 +7,9 @@ $(document).ready (function () {
   $(".iphone_modal_header_button").click(function () {
     $(this).toggleClass("bg-white");
   });
+  $(".footer_icon").click(function () {
+    $(this).toggleClass("bg-white");
+  });
   $("#first_track").click(function (){
     $(this).addClass("text_grey");
   });
