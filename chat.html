@@ -13,20 +13,20 @@
   <title>Iphone Challenge - Chat Page</title>
 </head>
 <body>
-  <div>
+  <div class="chat_page">
     <header>
       <div class="header_content msg_content">
-        <div class="col-xs-5 no_padding">
-          <i class="fa fa-circle" aria-hidden="true"></i>
-          <i class="fa fa-circle" aria-hidden="true"></i>
-          <i class="fa fa-circle" aria-hidden="true"></i>
-          <i class="fa fa-circle-o" aria-hidden="true"></i>
-          <i class="fa fa-circle-o" aria-hidden="true"></i>
+        <div class="col-xs-5 circle_container no_padding">
+          <i class="fa fa-circle circle_size" aria-hidden="true"></i>
+          <i class="fa fa-circle circle_size" aria-hidden="true"></i>
+          <i class="fa fa-circle circle_size" aria-hidden="true"></i>
+          <i class="fa fa-circle-o circle_size" aria-hidden="true"></i>
+          <i class="fa fa-circle-o circle_size" aria-hidden="true"></i>
           <span>virgin</span>
           <i class="fa fa-wifi" aria-hidden="true"></i>
         </div>
         <div class="col-xs-2 no_padding">
-          <span id="time_app">4:21 PM</span>
+          <span id="time_app"></span>
         </div>
         <div class="col-xs-3 no_padding infos_left">
           <div>
@@ -40,7 +40,7 @@
     <section>
       <div class="col-xs-12 chat_header">
         <div>
-          <span class="msg_action"><i class="fa fa-chevron-left" aria-hidden="true"></i> Messages</span>
+          <a class="msg_link" href="msg.html"><span class="msg_action"><i class="fa fa-chevron-left" aria-hidden="true"></i> Messages</span></a>
         </div>
         <div>
           <span class="msg_title">Louie</span>
@@ -51,12 +51,14 @@
       </div>
       <div class="container-fluid chat_content">
         <div class="col-xs-12">
-          <div class="chat_user_container">
+          <div class="chat_user_container arrow_box">
             <div class="chat_user">
               <p>I'm excited about this trip this
                 should be good. Haven't been
                 away in a while. I know it's for
                 work but still :)</p>
+              </div>
+              <div class="chat_bottom">
               </div>
             </div>
             <div class="chat_user_container2">
@@ -65,7 +67,7 @@
                 </p>
               </div>
             </div>
-            <div class="chat_user_container2">
+            <div class="chat_user_container2 arrow_box2">
               <div class="chat_user2">
                 <p>I'm in traffic. Wondering if we
                   have to go through is customs
@@ -73,22 +75,22 @@
                 </p>
               </div>
             </div>
-            <div class="chat_user_container">
+            <div class="chat_user_container arrow_box mini_box">
               <div class="chat_user">
                 <p>Customs in Toronto</p>
               </div>
             </div>
-            <div class="chat_user_container2">
+            <div class="chat_user_container2 arrow_box2 mini_box">
               <div class="chat_user2">
                 <p>Sweet. Thx brah</p>
               </div>
             </div>
             <div class="chat_day_container">
               <div class="chat_day">
-                <p><strong>Thu, Sep 19,</strong>1:26 PM</p>
+                <p><strong>Thu, Sep 19,</strong> 1:26 PM</p>
               </div>
             </div>
-            <div class="chat_user_container2">
+            <div class="chat_user_container2 arrow_box2 mini_box">
               <div class="chat_user2">
                 <p>Sup b</p>
               </div>
@@ -100,10 +102,10 @@
             </div>
             <div class="chat_day_container">
               <div class="chat_day">
-                <p><strong>Sun, Sep 22,</strong>4:18 PM</p>
+                <p><strong>Sun, Sep 22,</strong> 4:18 PM</p>
               </div>
             </div>
-            <div class="chat_user_container">
+            <div class="chat_user_container arrow_box">
               <div class="chat_user">
                 <p>Just chillin' and buildin'. Assets
                 for the PSDs are almost done.
@@ -113,12 +115,12 @@
           </div>
         </div>
       </section>
-      <footer>
-        <div class="col-xs-12 no_padding">
+      <footer class="chat_footer">
+        <div class="col-xs-12 chat_options_container no_padding">
           <div class="chat_options">
-            <i class="fa fa-camera" aria-hidden="true"></i>
-            <input type="text" placeholder="iMessage" />
-            <i class="fa fa-microphone" aria-hidden="true"></i>
+            <i class="fa fa-camera chat_options_icon" aria-hidden="true"></i>
+            <input id="imessage" class="imessage" type="text" placeholder="iMessage" />
+            <i class="fa fa-microphone chat_options_icon custom_micro" aria-hidden="true"></i>
           </div>
         </div>
       </footer>
