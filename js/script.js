@@ -16,7 +16,6 @@ $(document).ready (function () {
   });
   $("#next_track").click(function (){
     $("#first_track").removeClass("text_grey");
-    $('.modal_background').hide();
   });
   $(".airdrop").click(function (){
     $(".airdrop > .air_text").toggleClass("text_white");
@@ -50,17 +49,16 @@ $(document).ready (function () {
     var chat = $(".chat_content > div");
     if(e.which === 13) {
       if ($('#imessage').val() !== "") {
-        chat.append("<div id='new_container' class='chat_user_container2 arrow_box2'></div>");
+        $('.chat_end').removeClass("chat_end");
+        chat.append("<div id='new_container' class='chat_user_container2 bubble bubble--alt chat_end'></div>");
         var chat_container = $("#new_container");
         chat_container.append("<div id='new_user' class='chat_user2'></div>");
         var chat_msg = $("#new_user");
         chat_msg.append("<p>" + $('#imessage').val() + "</p>");
-        if (chat_msg.width() < 200) {
-          chat_container.addClass('mini_box');
-        }
         chat_container.removeAttr('id');
         chat_msg.removeAttr('id');
         $('#imessage').val("");
+        $(".chat_content").animate({ scrollTop: $(".chat_content").prop("scrollHeight")}, 1000);
       }
     }
   });
@@ -104,6 +102,59 @@ $(document).ready (function () {
     $('#Date_app').text(current_day2);
   }
 
+  var battery = 100;
+  if (battery < 20) {
+    $('#battery_logo').addClass("fa-battery-empty");
+    $('#battery_logo').removeClass("fa-battery-quarter");
+  }
+  else if (battery < 40) {
+    $('#battery_logo').addClass("fa-battery-quarter");
+    $('#battery_logo').removeClass("fa-battery-half");
+  }
+  else if (battery < 60) {
+    $('#battery_logo').addClass("fa-battery-half");
+    $('#battery_logo').removeClass("fa-battery-three-quarters");
+  }
+  else if (battery < 80) {
+    $('#battery_logo').addClass("fa-battery-three-quarters");
+    $('#battery_logo').removeClass("fa-battery-full");
+  }
+  else  if (battery <= 100){
+    $('#battery_logo').addClass("fa-battery-full");
+  }
+  $('#battery').text(battery + "%");
+  function updateBattery() {
+    battery--;
+    if (battery < 0) {
+      battery = 0;
+    }
+    if (battery === 0) {
+      $('body').html("");
+      $('body').addClass("no_screen");
+    }
+    if (battery === 20) {
+      $('#battery_logo').addClass("fa-battery-empty");
+      $('#battery_logo').removeClass("fa-battery-quarter");
+    }
+    else if (battery === 40) {
+      $('#battery_logo').addClass("fa-battery-quarter");
+      $('#battery_logo').removeClass("fa-battery-half");
+    }
+    else if (battery === 60) {
+      $('#battery_logo').addClass("fa-battery-half");
+      $('#battery_logo').removeClass("fa-battery-three-quarters");
+    }
+    else if (battery === 80) {
+      $('#battery_logo').addClass("fa-battery-three-quarters");
+      $('#battery_logo').removeClass("fa-battery-full");
+    }
+    else if (battery === 100) {
+      $('#battery_logo').addClass("fa-battery-full");
+    }
+    $('#battery').text(battery + "%");
+  }
+
   updateTime();
   setInterval(updateTime, 1000);
+  setInterval(updateBattery, 1000);
 });
