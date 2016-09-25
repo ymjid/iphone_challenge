@@ -41,6 +41,22 @@ $(document).ready (function () {
   });
   $("#msg_input").focusin(function(){
     $(".search_label").hide();
+    $("#msg_input").keyup(function(){
+      if ($(this).val() === "") {
+        $(".user_link").show();
+      }
+      else {
+        $(".user_link").hide();
+        $.each ($(".user_name > span"), function (key) {
+            if ($(".user_name > span")[key].innerText.toLowerCase().indexOf($("#msg_input").val().toLowerCase()) >= 0) {
+              $(".user_link")[key].style.display = "inline";
+            }
+            else {
+              $(".user_link")[key].style.display = "none";
+            }
+        });
+      }
+    });
   });
   $("#msg_input").focusout(function(){
     $(".search_label").show();
@@ -83,7 +99,7 @@ $(document).ready (function () {
   day[4] = "Thursday";
   day[5] = "Friday";
   day[6] = "Saturday";
-  day[7] = "Sunday";
+  day[0] = "Sunday";
   var current_month = month[time.getMonth()];
   var current_day = day[time.getDay()];
   var current_day2 = time.getDate();
@@ -129,7 +145,7 @@ $(document).ready (function () {
       battery = 0;
     }
     if (battery === 0) {
-      $('body').html("");
+      $('div:first-child').hide();
       $('body').addClass("no_screen");
     }
     if (battery === 20) {
