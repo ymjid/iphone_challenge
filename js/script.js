@@ -80,6 +80,7 @@ $(document).ready (function () {
   });
   var time = new Date($.now());
   var month = new Array();
+  var month_min = new Array();
   month[0] = "January";
   month[1] = "February";
   month[2] = "March";
@@ -92,6 +93,18 @@ $(document).ready (function () {
   month[9] = "October";
   month[10] = "November";
   month[11] = "December";
+  month_min[0] = "Jan";
+  month_min[1] = "Feb";
+  month_min[2] = "March";
+  month_min[3] = "April";
+  month_min[4] = "May";
+  month_min[5] = "June";
+  month_min[6] = "July";
+  month_min[7] = "Aug";
+  month_min[8] = "Sept";
+  month_min[9] = "Oct";
+  month_min[10] = "Nov";
+  month_min[11] = "Dec";
   var day = new Array();
   day[1] = "Monday";
   day[2] = "Tuesday";
@@ -101,6 +114,7 @@ $(document).ready (function () {
   day[6] = "Saturday";
   day[0] = "Sunday";
   var current_month = month[time.getMonth()];
+  var current_month_min = month_min[time.getMonth()];
   var current_day = day[time.getDay()];
   var current_day2 = time.getDate();
 
@@ -116,6 +130,7 @@ $(document).ready (function () {
     }
     $('#date').text(current_day + ", " + current_month + " " + current_day2);
     $('#Date_app').text(current_day2);
+    $('#Date_app_month').text(current_month_min);
   }
 
   var battery = 100;
